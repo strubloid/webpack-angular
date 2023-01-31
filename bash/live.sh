@@ -35,4 +35,4 @@ echo "=== node_modules : install"
 npm i
 
 echo "=== Node : Build"
-ng build --prod
+ng build --configuration production
