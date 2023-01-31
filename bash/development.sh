@@ -34,5 +34,8 @@ fi
 echo "=== node_modules : install"
 npm i
 
-echo "=== Node : Build"
-ng build --configuration production
+echo "=== Node : Serve"
+ng serve
+
+## if you want to check with a watcher
+# ng build --watch --configuration development

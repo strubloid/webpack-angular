@@ -27,21 +27,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/
+        test: /\.js$/,
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader',
         }]
       },
       {
-        test: /\.ts$/
+        test: /\.ts$/,
         exclude: /node_modules/,
         use: [{
           loader: 'awesome-typescript-loader',
         }]
       },
       {
-        test: /\.scss$/
+        test: /\.scss$/,
         exclude: /node_modules/,
         use: [{
           loader: 'sass-loader',
@@ -62,16 +62,14 @@ module.exports = {
   },
   alias: {
     'components': path.resolve(__dirname, 'src/components/'),
-    '@images': path.resolve(__dirname, 'src/images/'),
-    '@': path.resolve(__dirname, 'src'),
-    '@node-modules': path.resolve(__dirname, './node_modules/'),
+    'images': path.resolve(__dirname, 'src/images/'),
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core/,
-      path.join(__dirname, './src'),
-    ),
+    // new webpack.ContextReplacementPlugin(
+    //   /angular(\\|\/)core/,
+    //   path.join(__dirname, './src'),
+    // ),
     new HTMLWebpackPlugin({
       template: './src/index.html'
     }),
